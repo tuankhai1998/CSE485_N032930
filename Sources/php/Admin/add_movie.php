@@ -18,18 +18,19 @@
         if($movieName == "" || $movieNation == "" || $movieYear == "" || $movieTime == "" || $movieNumber == "" || $movieGroup == "" || $movieContent == ""){
             echo '<script> alert("*Bạn chưa nhập đầy đủ thông tin.")</script>';
         }
-        elseif ($_FILES['avatar']['error'] > 0) {
+        else if ($_FILES['avatar']['error'] > 0) {
             echo '<script>alert("*Bạn chưa chọn file upload");</script>';
         }
         else {
-            //Insert phim
-            $sql_insert_movie = "INSERT INTO movie(`movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `movieContent`) 
-            VALUES('$movieName','$movieNation','$movieYear','$movieTime','$movieNumber','$movieGroup','$movieContent')";
-            $query_insert_movie = mysqli_query($connect, $sql_insert_movie);
-
             // Upload file
-            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../videos/'.$_FILES['avatar']['name']);
+            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../images/'.$_FILES['avatar']['name']);
             echo '<script>alert("Đã tải lên thành công");</script>';
+            $link = '../../images/'.$_FILES['avatar']['name'].'';
+            //Insert phim
+            $sql_insert_movie = "INSERT INTO movie(`movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `movieContent`,`image`) 
+            VALUES('$movieName','$movieNation','$movieYear','$movieTime','$movieNumber','$movieGroup','$movieContent','$link')";
+            $query_insert_movie = mysqli_query($conn, $sql_insert_movie);
+            echo '<script>alert("Đã thêm thành công");</script>';          
             header("location: list_movie.php");
             // exit();
         }
@@ -84,9 +85,11 @@
                         <td style="text-align: center;"><input style=" width: 100px; margin-top: 10px;" type="submit" name="addClick" value="Thêm"/></td>
                     </tr>
                 </table>
+
             </form>
         </fieldset>
     </div>
 <?php
+    // echo"<a href=".$link."> dowload </a>";
     require("footer.php");
 ?>
