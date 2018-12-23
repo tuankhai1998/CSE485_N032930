@@ -1,13 +1,16 @@
 <?php
-require("header.php");
-require("footer.php");
-    // session_start();
-    // if($_SESSION["level" == 2]){
-    //     require("Template/header.php");
-    //     require("Template/footer.php");
-    // }
-    // else {
-    //     header("location:../index.php");
-    //     exit();
-    // }
+    session_start();
+    if(isset($_SESSION['username'])){
+        if($_SESSION['level']!=0){
+            require("header.php");
+            require("footer.php");
+        }else{
+            header("location:../templates/home.php"); 
+        }
+        
+    }
+    else {
+        header("location:../templates/index.php");
+        exit();
+    }
 ?>

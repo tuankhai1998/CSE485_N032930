@@ -68,9 +68,9 @@
         </form>  
     </div>
     
-    <script src="../../jquery-3.3.1.min.js"></script> 
-    <script src="../../jquery.validate.js"></script>      
-    <script src="../../loginsignin.js"></script> 
+    <script src="../../js/jquery-3.3.1.min.js"></script> 
+    <script src="../../js/jquery.validate.js"></script>      
+    <script src="../../js/loginsignin.js"></script> 
     
 </body>
 </html>
