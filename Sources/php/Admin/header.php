@@ -28,7 +28,8 @@
 
 <body>
     <div id="top">
-        <a href="../../phimviet1.html">Đăng xuất <i class="fas fa-sign-out-alt"></i></a>
+        <a href="#">Đăng xuất <i class="fas fa-sign-out-alt"></i></a>
+        <a href="#">Trang chủ</a>
         <p>Chào mừng quản trị viên</p>
     </div>
     <div id="menu">

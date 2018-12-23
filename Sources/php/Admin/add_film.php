@@ -7,11 +7,20 @@
         require("../library/config.php"); 
         // $id = $_GET['id'];
         $tap = mysqli_real_escape_string($conn, $_POST['txtnumber']);
+        $file_ext=strtolower(end(explode('.',$_FILES['movie']['name'])));
+        $expensions= array("mp4","ogg");
         if ($tap == "") {
             echo '<script> alert("*Bạn chưa nhập tập phim cần thêm.")</script>';
         }
-        elseif ($_FILES["movie"]['error'] > 0) {
+        elseif ($_FILES["movie"]['name'] == "") {
             echo '<script>alert("*Bạn chưa chọn file upload");</script>';
+        }elseif ($_FILES["movie"]['error'] > 0) {
+            echo '<script>alert("*File upload bị lỗi");</script>';
+        }elseif(in_array($file_ext,$expensions) === false){
+            //Định dạng file upload
+            echo '<script> alert("Chỉ hỗ trợ upload file MP4 và OGG.")</script>';
+        }elseif($_FILES['movie']['size'] > 2147483648) {
+            echo '<script> alert("Kích thước file không được lớn hơn 2GB.")</script>';
         }
         else{
             // Upload file

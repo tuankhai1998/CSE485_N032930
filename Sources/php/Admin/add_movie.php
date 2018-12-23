@@ -15,11 +15,20 @@
         $movieGroup = mysqli_real_escape_string($conn, $_POST['txt_movieGroup']);
         $movieContent = mysqli_real_escape_string($conn, $_POST['txt_movieContent']);
 
+        $file_ext=strtolower(end(explode('.',$_FILES['avatar']['name'])));
+        $expensions= array("jpeg","jpg","png");
+
         if($movieName == "" || $movieNation == "" || $movieYear == "" || $movieTime == "" || $movieNumber == "" || $movieGroup == "" || $movieContent == ""){
             echo '<script> alert("*Bạn chưa nhập đầy đủ thông tin.")</script>';
-        }
-        else if ($_FILES['avatar']['error'] > 0) {
+        }elseif ($_FILES["movie"]['name'] == "") {
             echo '<script>alert("*Bạn chưa chọn file upload");</script>';
+        }else if ($_FILES['avatar']['error'] > 0) {
+            echo '<script>alert("*File upload bị lỗi");</script>';
+        }elseif(in_array($file_ext,$expensions) === false){
+            //Định dạng file upload
+            echo '<script> alert("Chỉ hỗ trợ upload file JPEG, JPG hoặc PNG.")</script>';
+        }elseif($_FILES['movie']['size'] > 2097152) {
+            echo '<script> alert("Kích thước file không được lớn hơn 2MB.")</script>';
         }
         else {
             // Upload file
@@ -77,7 +86,7 @@
                         <td><textarea style="margin-left: 5px;" name="txt_movieContent" cols="30" rows="5"></textarea></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>Chọn ảnh phim:</td>
                         <td><input type="file" name="avatar"/></td>
                     </tr>
                     <tr>
