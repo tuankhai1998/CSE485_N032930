@@ -20,7 +20,7 @@
 
         if($movieName == "" || $movieNation == "" || $movieYear == "" || $movieTime == "" || $movieNumber == "" || $movieGroup == "" || $movieContent == ""){
             echo '<script> alert("*Bạn chưa nhập đầy đủ thông tin.")</script>';
-        }elseif ($_FILES["movie"]['name'] == "") {
+        }elseif ($_FILES["avatar"]['name'] == "") {
             echo '<script>alert("*Bạn chưa chọn file upload");</script>';
         }else if ($_FILES['avatar']['error'] > 0) {
             echo '<script>alert("*File upload bị lỗi");</script>';
