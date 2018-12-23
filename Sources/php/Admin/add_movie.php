@@ -27,7 +27,7 @@
         }elseif(in_array($file_ext,$expensions) === false){
             //Định dạng file upload
             echo '<script> alert("Chỉ hỗ trợ upload file JPEG, JPG hoặc PNG.")</script>';
-        }elseif($_FILES['movie']['size'] > 2097152) {
+        }elseif($_FILES['avatar']['size'] > 2097152) {
             echo '<script> alert("Kích thước file không được lớn hơn 2MB.")</script>';
         }
         else {
