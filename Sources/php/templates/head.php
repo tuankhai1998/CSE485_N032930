@@ -56,8 +56,8 @@
             </form> -->
         </div>
         <div class=" search-box">
-            <input type="text" placeholder="Tìm kiếm" class="search-txt">
-            <a href="#" class="search-btn">
+            <input type="text" placeholder="Tìm kiếm" class="search-txt" id="txtsearch">
+            <a href="#" class="search-btn" id="btnsearch">
                 <i class="fas fa-search"></i>
             </a>
         </div>

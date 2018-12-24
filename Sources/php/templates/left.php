@@ -2,7 +2,7 @@
     <div class="main-left col-8 col-tab-12">  
         <h2><a href="#" title="Xem tất cả">Phim mới <i class="fas fa-chevron-right"></i></a></h2>
         <div class="new-film">
-            <?PHP
+            <?php
                  require "../library/config.php";
                  $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6  ";
                  $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
