@@ -31,30 +31,31 @@ $(document).ready(function () {
             }
         });        
     });   
-  // load page close   
+  // load page close  
   //search 
-  $('.search-box .search-btn').click(function (e) { 
-    e.preventDefault();
-    var keyword = $('.search-box .search-txt').val();
-    if(keyword!=""){
-        $.ajax({
-            type: "POST",
-            url: "../control/search/search.php",
-            data: {
-                keyword:keyword,
-            },                
-            success: function (data) {
-                $('.main-left').html(data);
-                
-            }
-        });
-    }
-    
-});
+    $('.search-box .search-btn').click(function (e) { 
+        e.preventDefault();
+        var keyword = $('.search-box .search-txt').val();
+        if(keyword!=""){
+            $.ajax({
+                type: "POST",
+                url: "../control/search/search.php",
+                data: {
+                    keyword:keyword,
+                },                
+                success: function (data) {
+                    $('.main-left').html(data);
+                    // $('.row').html(data);
+                    
+                }
+            });
+        }
+        
+    });
 
 
 
-//search close
+  //search close  
  
    
 });

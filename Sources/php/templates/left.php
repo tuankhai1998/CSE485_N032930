@@ -4,7 +4,7 @@
         <div class="new-film">
             <?php
                  require "../library/config.php";
-                 $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6  ";
+                 $Xuatphimmoi = "SELECT movie.*,link.* FROM `movie`,`link` where movie.movieID=link.movieID ORDER BY link.linkDayUp DESC limit 0,6  ";
                  $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
                  if (mysqli_num_rows($KETQUAPHIMMOI)>0){
                      while($rows= mysqli_fetch_assoc($KETQUAPHIMMOI)){
@@ -33,7 +33,7 @@
         <div class="movie">
         <?PHP
             require "../library/config.php";            
-            $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =1 and movie.movieID=link.movieID and link.number=1 limit 0,6";
+            $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =1 and movie.movieID=link.movieID and link.number=1 ORDER BY view DESC limit 0,6";
             $query = mysqli_query($conn,$theloai);   
             if(mysqli_num_rows($query)>0) {
                 while($rows= mysqli_fetch_assoc($query)){
@@ -100,7 +100,7 @@
             <?PHP
                 require "../library/config.php";
                   
-                $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =2 and movie.movieID=link.movieID and link.number=1 limit 0,6";
+                $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =2 and movie.movieID=link.movieID and link.number=1 ORDER BY view DESC limit 0,6";
                 $query = mysqli_query($conn,$theloai);   
                 if(mysqli_num_rows($query)>0) {
                     while($rows= mysqli_fetch_assoc($query)){

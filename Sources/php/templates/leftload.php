@@ -5,7 +5,7 @@
         <?php
             require "../library/config.php";
             $groubID = $_GET['groubID'];   
-            $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID ='$groubID' and movie.movieID=link.movieID and link.number=1 limit 0,12";
+            $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID ='$groubID' and movie.movieID=link.movieID and link.number=1 ORDER BY view DESC limit 0,12";
             $query = mysqli_query($conn,$theloai);   
             if(mysqli_num_rows($query)>0) {
                 while($rows= mysqli_fetch_assoc($query)){

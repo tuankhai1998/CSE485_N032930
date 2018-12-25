@@ -26,7 +26,7 @@
         }
     }
     else{
-       echo'1';
+       echo'<br><h2>Không có phim bạn muốn tìm!</h2>';
     }
     mysqli_close($conn);
 

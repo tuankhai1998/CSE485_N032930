@@ -287,6 +287,7 @@ label.error {
 	box-sizing: border-box;	
 	margin-bottom: 0.5em;	
 	border-right: #141414 0.5em solid;
+	min-height: 1025px;
 }
 .new-film,
 .movie,
@@ -447,6 +448,9 @@ h2 a{
 
 /*/footer*/
 /*phimviet2*/
+.row{
+	min-height: 1025px;
+}
 .captionmain {
 	background: #5C5C5C;
 	margin-bottom: .5em;
@@ -519,6 +523,7 @@ h2 a{
 	.pin-to-top{
 		justify-content:space-between;
 	}
+	
     .col-tab-1 {width: 8.33%;}
     .col-tab-2 {width: 16.66%;}
     .col-tab-3 {width: 25%;}
@@ -572,6 +577,7 @@ h2 a{
 	.list-item img{
 		width: 30%;
 		padding-left: .3em;
+		margin: .5em;
 	}
 
 	.header-1{

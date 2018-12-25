@@ -1,16 +1,15 @@
 <div class="row">
         <div class="captionmain col-12 col-tab-12">   
-            <?php
-                // $src=$_GET['link'];
-                // $test= explode('&',$_GET['link']);
-                // print_r($test);
+            <?php                
                 $id=$_GET['id'];                   
                 $tap = $_GET['tap'];
-                require '../library/config.php';    
+                require '../library/config.php'; 
+                require '../library/view.php';     
                 $truyvanlink="SELECT `Link` FROM `link` WHERE `number`=$tap and movieID = $id ";
                 $src=mysqli_query($conn,$truyvanlink);
                 $rows=mysqli_fetch_assoc($src);
                 echo'<video  width="100%" height="auto" src="'.$rows['Link'].'" controls autoplay></video>';
+                count_view($id);
             ?>       
             
             <div class="conten">
