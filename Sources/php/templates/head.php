@@ -16,7 +16,7 @@
 <body id="main">
     <div class="header-1 col-12">
         <div class="top">
-            <a href="#" id="btnadmin"><i class="fas fa-users"></i>&ensp;Login</a><!--tạo khoản trắng bằng &ensp; -->
+            <a href="../admin/index.php" id="btnadmin"><i class="fas fa-users"></i>&ensp;Hello,<?=$_SESSION['username']?>!</a><!--tạo khoản trắng bằng &ensp; -->
             <!-- <a href="#">Liên hệ quản cáo</a>                 -->
             <a href="../control/controlsignin/logout.php">Đăng xuất</a>
             <!-- <form id="form-signup" class="form" >

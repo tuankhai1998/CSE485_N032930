@@ -17,7 +17,7 @@
     <div class="header-1 col-12">
         <div class="top">        
             <?php
-                echo'<a href="#" id="btnadmin"><i class="fas fa-users">&ensp;</i>Hello,'.$_SESSION['username'].'!</a>';
+                echo'<a href="../admin/index.php" id="btnadmin"><i class="fas fa-users">&ensp;</i>Hello,'.$_SESSION['username'].'!</a>';
             ?>  <!--tạo khoản trắng bằng &ensp; -->           
             <!-- <a href="#">Liên hệ quản cáo</a> -->
             <a href="../control/controlsignin/logout.php">Đăng xuất</a>
