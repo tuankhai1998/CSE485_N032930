@@ -15,31 +15,21 @@
         $movieGroup = mysqli_real_escape_string($conn, $_POST['txt_movieGroup']);
         $movieContent = mysqli_real_escape_string($conn, $_POST['txt_movieContent']);
 
-        $file_ext=strtolower(end(explode('.',$_FILES['avatar']['name'])));
-        $expensions= array("jpeg","jpg","png");
-
         if($movieName == "" || $movieNation == "" || $movieYear == "" || $movieTime == "" || $movieNumber == "" || $movieGroup == "" || $movieContent == ""){
             echo '<script> alert("*Bạn chưa nhập đầy đủ thông tin.")</script>';
-        }elseif ($_FILES["avatar"]['name'] == " ") {
+        }
+        elseif ($_FILES['avatar']['error'] > 0) {
             echo '<script>alert("*Bạn chưa chọn file upload");</script>';
-        }else if ($_FILES['avatar']['error'] > 0) {
-            echo '<script>alert("*File upload bị lỗi");</script>';
-        }elseif(in_array($file_ext,$expensions) === false){
-            //Định dạng file upload
-            echo '<script> alert("Chỉ hỗ trợ upload file JPEG, JPG hoặc PNG.")</script>';
-        }elseif($_FILES['movie']['size'] > 2097152) {
-            echo '<script> alert("Kích thước file không được lớn hơn 2MB.")</script>';
         }
         else {
-            // Upload file
-            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../images/'.$_FILES['avatar']['name']);
-            echo '<script>alert("Đã tải lên thành công");</script>';
-            $link = '../../images/'.$_FILES['avatar']['name'].'';
             //Insert phim
-            $sql_insert_movie = "INSERT INTO movie(`movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `movieContent`,`image`) 
-            VALUES('$movieName','$movieNation','$movieYear','$movieTime','$movieNumber','$movieGroup','$movieContent','$link')";
-            $query_insert_movie = mysqli_query($conn, $sql_insert_movie);
-            echo '<script>alert("Đã thêm thành công");</script>';          
+            $sql_insert_movie = "INSERT INTO movie(`movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `movieContent`) 
+            VALUES('$movieName','$movieNation','$movieYear','$movieTime','$movieNumber','$movieGroup','$movieContent')";
+            $query_insert_movie = mysqli_query($connect, $sql_insert_movie);
+
+            // Upload file
+            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../videos/'.$_FILES['avatar']['name']);
+            echo '<script>alert("Đã tải lên thành công");</script>';
             header("location: list_movie.php");
             // exit();
         }
@@ -86,7 +76,7 @@
                         <td><textarea style="margin-left: 5px;" name="txt_movieContent" cols="30" rows="5"></textarea></td>
                     </tr>
                     <tr>
-                        <td>Chọn ảnh phim:</td>
+                        <td></td>
                         <td><input type="file" name="avatar"/></td>
                     </tr>
                     <tr>
@@ -94,11 +84,9 @@
                         <td style="text-align: center;"><input style=" width: 100px; margin-top: 10px;" type="submit" name="addClick" value="Thêm"/></td>
                     </tr>
                 </table>
-
             </form>
         </fieldset>
     </div>
 <?php
-    // echo"<a href=".$link."> dowload </a>";
     require("footer.php");
 ?>

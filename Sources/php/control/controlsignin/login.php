@@ -11,7 +11,7 @@
         if(password_verify($password,$row['userPassword'])){
             if($row['userActive']==1){
                 $_SESSION['username']=$username;
-                $_SESSION['level']=$row['userLevel'] ;             
+                // $_SESSION['level']=$row['phanquyen']              
                 echo 1;
                 // header('location:../../templates/home.php');
             }

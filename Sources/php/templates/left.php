@@ -4,20 +4,20 @@
         <div class="new-film">
             <?PHP
                  require "../library/config.php";
-                 $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6  ";
+                 $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent` FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6 ";
                  $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
-                 if (mysqli_num_rows($KETQUAPHIMMOI)>0){
+                 if (mysqli_num_rows($KETQUAPHIMMOI)>0) {
                      while($rows= mysqli_fetch_assoc($KETQUAPHIMMOI)){
                          echo '<div class="item">
                                  <label class="label-status">'.$rows['movieNumber'].'</label>';
-                         echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'">
+                         echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'">
                                      <img src="'.$rows['image'].'">
                                      <div class="title">
                                          <p class="name">'.$rows['movieName'].'</p>
                                      </div>
                                  </a>';
                          echo ' <div class="hover-item" title="'.$rows['movieName'].'">
-                                     <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'"><i class="fas fa-play-circle"></i></a>
+                                     <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'"><i class="fas fa-play-circle"></i></a>
                                  </div>
                                  </div>';
      
@@ -32,30 +32,30 @@
         <h2><a href="phimle.php?groubID=1" title="Xem tất cả">Phim lẻ <i class="fas fa-chevron-right"></i></a> </i></h2>
         <div class="movie">
         <?PHP
-            require "../library/config.php";            
-            $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =1 and movie.movieID=link.movieID and link.number=1 limit 0,6";
-            $query = mysqli_query($conn,$theloai);   
-            if(mysqli_num_rows($query)>0) {
-                while($rows= mysqli_fetch_assoc($query)){
+            require "../library/config.php";
+            $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent` FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6 ";
+            $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
+            if (mysqli_num_rows($KETQUAPHIMMOI)>0) {
+                while($rows= mysqli_fetch_assoc($KETQUAPHIMMOI)){
                     echo '<div class="item">
-                                 <label class="label-status">'.$rows['movieNumber'].'</label>';
-                    echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'">
+                            <label class="label-status">'.$rows['movieNumber'].'</label>';
+                    echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'">
                                 <img src="'.$rows['image'].'">
                                 <div class="title">
                                     <p class="name">'.$rows['movieName'].'</p>
                                 </div>
                             </a>';
                     echo ' <div class="hover-item" title="'.$rows['movieName'].'">
-                                <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'"><i class="fas fa-play-circle"></i></a>
+                                <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'"><i class="fas fa-play-circle"></i></a>
                             </div>
                             </div>';
+
                 }
             }
             else{
                 echo 'không có bản ghi nào!';
-            }    
-            mysqli_close($conn);       
-               
+            }  
+            mysqli_close($conn);          
         ?> 
             <!-- <div class="item">
                 <label class="label-status">full</label>
@@ -98,31 +98,30 @@
         <h2><a href="phimle.php?groubID=2" title="Xem tất cả">Phim bộ <i class="fas fa-chevron-right"></i></a> </h2>
         <div class="tivishow">
             <?PHP
-                require "../library/config.php";
-                  
-                $theloai = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent`,link.number FROM `movie`,`link`  where groupID =2 and movie.movieID=link.movieID and link.number=1 limit 0,6";
-                $query = mysqli_query($conn,$theloai);   
-                if(mysqli_num_rows($query)>0) {
-                    while($rows= mysqli_fetch_assoc($query)){
-                        echo '<div class="item">
-                                     <label class="label-status">'.$rows['movieNumber'].'</label>';
-                        echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'">
-                                    <img src="'.$rows['image'].'">
-                                    <div class="title">
-                                        <p class="name">'.$rows['movieName'].'</p>
-                                    </div>
-                                </a>';
-                        echo ' <div class="hover-item" title="'.$rows['movieName'].'">
-                                    <a href="phimviet2.php?id='.$rows['movieID'].'&tap='.$rows['number'].'"><i class="fas fa-play-circle"></i></a>
-                                </div>
-                                </div>';
-                    }
-                }
-                else{
-                    echo 'không có bản ghi nào!';
-                }    
-                mysqli_close($conn);       
-              
+                 require "../library/config.php";
+                 $Xuatphimmoi = "SELECT movie.movieID, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `Link`,`movieContent` FROM `movie`,`link` where movie.movieID=link.movieID and link.number=1 limit 0,6 ";
+                 $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
+                 if (mysqli_num_rows($KETQUAPHIMMOI)>0) {
+                     while($rows= mysqli_fetch_assoc($KETQUAPHIMMOI)){
+                         echo '<div class="item">
+                                 <label class="label-status">'.$rows['movieNumber'].'</label>';
+                         echo ' <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'">
+                                     <img src="'.$rows['image'].'">
+                                     <div class="title">
+                                         <p class="name">'.$rows['movieName'].'</p>
+                                     </div>
+                                 </a>';
+                         echo ' <div class="hover-item" title="'.$rows['movieName'].'">
+                                     <a href="phimviet2.php?id='.$rows['movieID'].'&link='.$rows['Link'].'"><i class="fas fa-play-circle"></i></a>
+                                 </div>
+                                 </div>';
+     
+                     }
+                 }
+                 else{
+                     echo 'không có bản ghi nào!';
+                 }  
+                 mysqli_close($conn);        
             ?> 
 
 

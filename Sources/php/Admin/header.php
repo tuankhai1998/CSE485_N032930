@@ -28,8 +28,7 @@
 
 <body>
     <div id="top">
-        <a href="../control/controlsignin/logout.php">Đăng xuất <i class="fas fa-sign-out-alt"></i></a>
-        <a href="../templates/home.php">Trang chủ</a>
+        <a href="../../phimviet1.html">Đăng xuất <i class="fas fa-sign-out-alt"></i></a>
         <p>Chào mừng quản trị viên</p>
     </div>
     <div id="menu">

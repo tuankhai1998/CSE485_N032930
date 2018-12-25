@@ -34,7 +34,7 @@
     
 
     //Mở kết nối csdl
-    require("../library/config.php");
+    require("../../Login/connect.php");
     //Thực hiện câu truy vấn
     $result = mysqli_query($conn, "SELECT * FROM `movie` WHERE movieID = $id");
     $data = mysqli_fetch_assoc($result);

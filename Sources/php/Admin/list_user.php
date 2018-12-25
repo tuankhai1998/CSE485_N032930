@@ -1,10 +1,3 @@
-<?php 
-    session_start();
-    if(isset($_SESSION['username'])){
-        if($_SESSION['level']==2){         
-      
-
-?>
 <?php
     require("header.php");
 ?>
@@ -52,15 +45,4 @@
     </div>
 <?php
     require("footer.php");
-?>
-<?php
-      }else{
-        header("location:list_movie.php");
-    }    
-    }
-    else {
-        header("location:../templates/index.php");
-        exit();
-    }
-
 ?>
