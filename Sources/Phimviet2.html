@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    
+</head>
+<title>Phim Online.com</title>
+</head>
+<body id="main">
+    <div class="header-1 col-12">
+        <div class="top">
+            <a href="#" id="btnlogin"><i class="fas fa-users"></i>&ensp;Login</a><!--tạo khoản trắng bằng &ensp; -->
+            <a href="#">Liên hệ quản cáo</a>
+            <!-- <form id="form-signup" class="form" >
+                <a href="#" class="closse"><i class="fas fa-users"></i></a>
+                <div id="signupName" class="group">
+                    <i class="fas fa-user icon_signup"></i>
+                    <input class="fomat" type="text" id="username" name="username" placeholder="User name">
+                </div>
+                <div id="signupEmail" class="group">
+                    <i class="fas fa-envelope icon_signup"></i>
+                    <input class="fomat" type="text" id="email" name="email"  placeholder="Email">
+                </div>
+                <div id="signPassword" class="group">
+                    <i class="fas fa-lock icon_signup"></i>
+                    <input class="fomat" type="password" id="password" name="password"  placeholder="Password">
+                </div>
+                <div id="signConfirmPassword" class="group">
+                    <i class="fas fa-lock icon_signup"></i>
+                    <input class="fomat" type="password" id="confirm_password" name="confirm_password"  placeholder="Confirm password">
+                </div>                
+                <input id="subsignup" value="Sign up" type="button" name="submitacc">                
+            </form>
+            <form id="form-login" class="form">
+                <a href="#" class="closse"><i class="fas fa-users"></i></a>
+                <div id="loginName" class="group">
+                    <i class="fas fa-user icon_login"></i>
+                    <input class="fomat" type="text" id="name" placeholder="User name">
+                </div>
+                <div id="loginPassword" class="group">
+                    <i class="fas fa-lock icon_login"></i>
+                    <input class="fomat" type="password" id="password" placeholder="Password">
+                </div>
+                <div id="sublogin">
+                        <input id="login" class="sublogin" value="Log in" type="button" name="submit">
+                        <input  id="Signup" class="sublogin" value="Sign up" type="button">
+                </div>               
+            </form> -->
+            
+        </div>
+        <div class=" search-box">
+            <input type="text" placeholder="Tìm kiếm" class="search-txt">
+            <a href="#" class="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header-2 col-12">
+            <div class="logo">
+                <h1><a href="phimviet1.html">Phim<span style="color: #FFCD43;">Online</span> </a></h1>
+                <p>PhimOnline.com</p>
+            </div>
+            <nav class="navbar">
+                <div class="nav-wrapper">
+                    <ul>
+                        <li><a href="phimviet1.html">Trang chủ</a></li>
+                        <li><a href="">Phim mới</a></li>
+                        <li><a href="">Phim lẻ</a></li>
+                        <li><a href="">Phim bộ</a></li>
+                        <li><a href="">Khác...</a></li>
+
+                    </ul>
+                </div>
+                <a href="#" class="open-slide" onclick="openslidemenu()"><i class="fas fa-sliders-h"></i></a>
+            </nav>
+            <div id="slide-menu" class="slide-nav">
+                <a href="#" onclick="closeslidemenu()" class="closemenu"><i class="fas fa-times"></i></a>
+                <a href="">Trang chủ</a>
+                <a href="">Phim mới</a>
+                <a href="">Phim lẻ</a>
+                <a href="">Phim bộ</a>
+                <a href="">Khác...</a>
+            </div>
+        </div>
+        <!--<div class="banner col-12">
+           <div class="itembr col-7 col-tab-12">banner1</div>
+           <div class="itembr col-5 col-tab-12">banner2</div>           
+        </div>-->
+        <div class="row">
+            <div class="captionmain col-12 col-tab-12">
+                <!-- <video class="vides" autoplay controls width="100%" height="auto">
+                    <source src="https://youtu.be/V9PhFduAQQ4">
+                </video> -->
+                <video width="960px" height="540px" controls autoplay id="video">
+                    <source src="videos/Dao.Hai.Tac-One.360p.mp4">
+                </video>
+                <div class="conten">
+                    <h3 id="filmname">
+                        Hướng dẫn sử dụng 
+                    </h3>
+                    <div id="fimlconten">
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, iste veritatis quo architecto dolores nostrum totam non praesentium, dolorum tenetur iure aliquam saepe velit vel illo aspernatur quidem corrupti debitis!</p>  
+                    </div>
+                    <div id="classfilm">
+                        <p>Lorem ipsum dolor sit.</p>
+                    </div>
+                    <div id="information">
+                        <p>Quốc gia:<span id="nation"></span></p>
+                        <p>Thời lượng:<span id="time"></span>phút/tập</p>
+                        <p>Số tập:<span id="sotap"></span></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="contenmain col-12 col-tab12">
+               <ul>
+                   <li><a href="videos/demo.mp4" class="chontap">1</a></li>
+                   <li><a href="videos/Dao.Hai.Tac-One.360p.mp4">2</a></li>
+                   <li><a href="#">3</a></li>
+                   <li><a href="#">4</a></li>
+                   <li><a href="#">5</a></li>
+               </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer col-12">
+        <div class="bottom">
+            <div class="logo">
+                <h1>Phim<span style="color: #FFCD43;">Online</span></h1>
+                <p>Copyright © PhimOnline.com. All Rights Reserved.</p>
+                <p>Nội dung được chia sẻ miễn phí giữa các thành viên.</p>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="support">
+                <h3>Trợ giúp</h3>
+                <ul>
+                    <li><a href="#">Hỏi đáp</a></li>
+                    <li><a href="#">Liêm hệ</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                </ul>
+            </div>
+            <div class="contribute">
+                <h3>Đóng góp</h3>
+                <ul>
+                    <li><a href="#">Hợp tác nội dung</a></li>
+                    <li><a href="#">Hợp tác ý tưởng</a></li>
+                    <li><a href="#">Góp ý</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="script2.js"></script> 
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.validate.js"></script>  
+
+</body>
+</html>
