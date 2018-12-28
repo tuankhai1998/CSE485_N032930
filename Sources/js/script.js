@@ -35,6 +35,7 @@ $(document).ready(function () {
   //search 
     $('.search-box .search-btn').click(function (e) { 
         e.preventDefault();
+        $('.search-box  .search_result').hide(500);
         var keyword = $('.search-box .search-txt').val();
         if(keyword!=""){
             $.ajax({

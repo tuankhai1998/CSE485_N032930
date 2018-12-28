@@ -64,109 +64,37 @@ body{
 .search-txt{
     font-size: 17px;
 	border-radius: 10px;
-	width: 200px;
+	width: 300px;
     height: 40px;
     background: #ffffff;
 	border: none;
 	font-family: 'Open Sans Condensed', sans-serif;
 	padding: 0.4em;	
 }
-.top .logout{
-	display:none;
-}
 
-/* .form input{
-	display: block;
-	width: 15em;
-	height: 2.3em;
-	margin: 5px;
-	border: none;
-	background:none;
+.search-box{
+	position: relative;
 }
-.form button{
-	width: 80px;
-	margin-left: 15px;
-}
-.form a{
+.search_result{
+	width: 400px;
+	padding: 20px;	
+	background: #898989;
 	position: absolute;
-	font-size: 400%;
-	left:91px;
-	top:-50px;
-}
-.form{
-	border: 1px solid #212121;
-	padding: 2em;
-	background: #3D3D3D	;
-	position: fixed;
-	top: 40%;
-	left: 41%;
-	z-index: 99999;
-	opacity: 0;
-	transition:.7s;
-	margin-left: 900px;	
-} */
-/* .html {
-	position: relative;	
-	background: white;
-} */
-/* .form{
-
-	background-color: rgba(0, 0, 0, 0.91);
-	padding: 10px;
-	border-radius: 2px;
-	position: fixed;
-	z-index: 99999;
-	opacity: 0;
-	transition:.7s;
-	margin-left: 900px;	
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	
-} */
-/* .fomat{
-	box-sizing: border-box;
-	border: none;
-	padding: 5px 5px 5px 10px;
-	width: 250px;
-	background-color: none;
-	outline:none;
-
-}
-.group{
-	margin: 9px;
-	background: white;
-	border-radius: 2px;
-}
-.icon_signup, .icon_login{
-	padding-top: 5px;
-	padding-left: 8px;
-	width: 20px;
-	height: 20px;
-	background: none;
+	z-index: 9999;
+	right: 0px;
+	margin-top: 10px;
+	border-radius: 10px;
 	
 }
-#subsignup{
-	margin-left: 120px;
-	border-radius: 2px;
+.search_result .list-item img {
+	height: 150px;  
+	width: 120px;  
+	object-fit: cover;
+	padding: 2px;
 }
-#sublogin{
-	margin-left: 85px;	
-	border-radius: 2px;
+.search_result .list-item :hover{
+	background: #daa40f;
 }
-.sublogin{
-	margin: 0px 5px;
-	padding: 3px;
-}
-form .closse{
-	font-size: 50px;
-	margin: 0px 100px;
-	color: white;
-}
-label.error {
-    color: #da380f;
-	display: block;
-} */
 
 /*/header-1*/
 /*header-2*/
@@ -399,7 +327,6 @@ h2 a{
 .list-item:hover {
 	background :rgba(236, 136, 14, 0.774);
 	border-radius: 2%;
-
 	transition: 0.7s ease;	
 	transform: translate(-6px,-3px);
 }
@@ -494,7 +421,29 @@ h2 a{
 	color: #fff;
 	background:#141414; 
 } */
-
+.comment{
+	background: #5C5C5C;
+	margin-bottom: 0.5em;
+	min-height: 200px;
+}
+.submit{
+	width: 100px;
+	height: 30px;
+	display: block;
+}
+.comment_form{
+	position: relative;
+	display: block;
+}
+.submit{
+	position: absolute;
+	right: 20px;
+}
+.txtcomment{
+	width: 100%;	
+	font-family: sans-serif;
+	
+}
 
 /*/phimviet2*/
 

@@ -62,6 +62,9 @@
             <a href="#" class="search-btn">
                 <i class="fas fa-search"></i>
             </a>
+            <div class="search_result">
+                
+            </div>
         </div>
     </div>
     <div class="container">

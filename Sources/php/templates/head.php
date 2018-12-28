@@ -57,9 +57,12 @@
         </div>
         <div class=" search-box">
             <input type="text" placeholder="Tìm kiếm" class="search-txt" id="txtsearch">
-            <a href="#" class="search-btn" id="btnsearch">
+            <a href="#" class="btn_search" id="btnsearch">
                 <i class="fas fa-search"></i>
             </a>
+            <div class="search_result">
+             
+            </div>
         </div>
     </div>
     <div class="container">
