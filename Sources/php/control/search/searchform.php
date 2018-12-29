@@ -5,13 +5,13 @@
     $query = mysqli_query($conn,$sql);
     if(mysqli_num_rows($query)>0) {
 ?>  
-   <?php
-        echo'<h2>Phim được tìm thấy với từ khóa "<strong>'.$keyword.'</strong>"</h2>';
-   ?>
+   
     
     <div class="search_result">
         <div class="list_film">
-        
+    <?php
+        echo'<h2>Phim được tìm thấy với từ khóa "<strong>'.$keyword.'</strong>"</h2>';
+    ?>
 <?php
         while($rows= mysqli_fetch_assoc($query)){
             echo'<div class="list-item">

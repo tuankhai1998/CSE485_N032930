@@ -65,23 +65,4 @@
                
             </ul>
         </div>
-        <div class="comment col-12 col-tab12">
-                <h3>Viết bình luận <i class="fas fa-pencil-alt"></i></h3><br>
-                <form class="comment_form">                   
-                    <textarea name="comment" cols="100" rows="6" class="txtcomment"></textarea>
-                    <button class="submit" name="binhluan">Gửi</button>
-                </form><br><br>
-                <div class="listcomment col-12 col-tab12">
-                    <hr><br>
-                    <h4>User name</h4>
-                    <p>day up </p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In velit animi quibusdam, debitis accusamus dolores veritatis dolorum mollitia neque temporibus.</p><br>
-                    <hr><br>
-                    <h4>User name</h4>
-                    <p>day up </p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In velit animi quibusdam, debitis accusamus dolores veritatis dolorum mollitia neque temporibus.</p><br>
-                </div>
-            </div>
-
-    </div>
-</div>
+        

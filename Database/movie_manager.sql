@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 24, 2018 lúc 06:20 PM
+-- Thời gian đã tạo: Th12 29, 2018 lúc 07:24 AM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 5.6.38
 
@@ -21,6 +21,36 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `movie_manager`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `comment`
+--
+
+CREATE TABLE `comment` (
+  `cmttID` int(10) UNSIGNED NOT NULL,
+  `ID` int(10) UNSIGNED NOT NULL,
+  `movieID` int(10) UNSIGNED NOT NULL,
+  `cmtContent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `cmtDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `comment`
+--
+
+INSERT INTO `comment` (`cmttID`, `ID`, `movieID`, `cmtContent`, `cmtDate`) VALUES
+(1, 11, 35, 'khaiw22er', '2018-12-29 13:06:18'),
+(2, 11, 35, 'tuansad ', '2018-12-29 13:06:34'),
+(3, 11, 35, 'hông f;adsjfakslg', '2018-12-29 13:06:52'),
+(4, 11, 35, 'minh \n', '2018-12-29 13:08:10'),
+(5, 11, 35, 'minh ', '2018-12-29 13:11:53'),
+(6, 11, 35, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2018-12-29 13:13:06'),
+(7, 11, 35, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.ggfhjghj ', '2018-12-29 13:13:25'),
+(8, 11, 35, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.ggfhjghj Lorem Ipsum is simply dummy text of the ', '2018-12-29 13:13:43'),
+(9, 11, 35, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.ggfhjghj Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text ', '2018-12-29 13:13:53'),
+(10, 11, 35, 'Lorem Ipsum is simply dummy text of the prinLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the', '2018-12-29 13:14:23');
 
 -- --------------------------------------------------------
 
@@ -79,28 +109,28 @@ CREATE TABLE `movie` (
 --
 
 INSERT INTO `movie` (`movieID`, `movieName`, `movieNation`, `movieYear`, `movieTime`, `movieNumber`, `groupID`, `image`, `movieContent`, `view`) VALUES
-(1, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 5),
+(1, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 55),
 (2, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 2),
 (4, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
 (5, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
 (6, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
-(7, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 6),
+(7, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 9),
 (8, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
 (9, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
-(10, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 1),
+(10, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 2),
 (11, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
 (12, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
 (14, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
-(26, 'Điệp viên không không thấy 3', 'Anh', 2018, '160', 1, 1, '../../images/poster.medium.jpg', 'JOHNNY ENGLISH: TÁI XUẤT GIANG HỒ là phần thứ ba của loạt phim hài Johnny English, với Rowan Atkinson trong vai một gã bỗng dưng trở thành một điệp viên bí mật. Cuộc phiêu lưu mới bắt đầu khi một vụ điều tra hệ thống an ninh mạng cho thấy danh tính của tất cả các điệp viên đang hoạt động tại Anh, và Johnny là hy vọng cuối cùng để điều tra bí mật ấy. \r\n\r\nDù được biết là một điệp viên nghỉ hưu nhưng đây là lần đầu tiên gã giang hồ này bắt tay động với sứ mệnh tìm kiếm kẻ tấn công. Là một người với kỹ năng ít ỏi và năng lực hạn chế, Johnny English có phải vượt qua được những thách thức trong thời buổi công nghệ hiện đại để hoàn thành sứ mệnh này thành công hay không? ', 4),
+(26, 'Điệp viên không không thấy 3', 'Anh', 2018, '160', 1, 1, '../../images/poster.medium.jpg', 'JOHNNY ENGLISH: TÁI XUẤT GIANG HỒ là phần thứ ba của loạt phim hài Johnny English, với Rowan Atkinson trong vai một gã bỗng dưng trở thành một điệp viên bí mật. Cuộc phiêu lưu mới bắt đầu khi một vụ điều tra hệ thống an ninh mạng cho thấy danh tính của tất cả các điệp viên đang hoạt động tại Anh, và Johnny là hy vọng cuối cùng để điều tra bí mật ấy. \r\n\r\nDù được biết là một điệp viên nghỉ hưu nhưng đây là lần đầu tiên gã giang hồ này bắt tay động với sứ mệnh tìm kiếm kẻ tấn công. Là một người với kỹ năng ít ỏi và năng lực hạn chế, Johnny English có phải vượt qua được những thách thức trong thời buổi công nghệ hiện đại để hoàn thành sứ mệnh này thành công hay không? ', 11),
 (27, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
 (28, 'Anh Hùng Xạ Điêu ', 'Trung Quốc', 2006, '45', 40, 2, '../../images/anh-hung-xa-dieu-201612899.jpg', 'Anh hùng xạ điêu xoay quanh câu chuyện của hai nhà họ Dương và Quách vốn có mối quan hệ thân thiết với nhau. Những mối quan hệ này được nối tiếp nhau, đẩy nội dung phim lên đến cao trào và vỡ òa bằng những cung bậc cảm xúc khác nhau: có yêu, có hận, có tiếc thương.', 0),
 (29, 'Điệp viên không không thấy 3', 'Anh', 2018, '160', 1, 1, '../../images/poster.medium.jpg', 'JOHNNY ENGLISH: TÁI XUẤT GIANG HỒ là phần thứ ba của loạt phim hài Johnny English, với Rowan Atkinson trong vai một gã bỗng dưng trở thành một điệp viên bí mật. Cuộc phiêu lưu mới bắt đầu khi một vụ điều tra hệ thống an ninh mạng cho thấy danh tính của tất cả các điệp viên đang hoạt động tại Anh, và Johnny là hy vọng cuối cùng để điều tra bí mật ấy. \r\n\r\nDù được biết là một điệp viên nghỉ hưu nhưng đây là lần đầu tiên gã giang hồ này bắt tay động với sứ mệnh tìm kiếm kẻ tấn công. Là một người với kỹ năng ít ỏi và năng lực hạn chế, Johnny English có phải vượt qua được những thách thức trong thời buổi công nghệ hiện đại để hoàn thành sứ mệnh này thành công hay không? ', 0),
 (30, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
 (31, 'Điệp viên không không thấy 3', 'Anh', 2018, '160', 1, 1, '../../images/poster.medium.jpg', 'JOHNNY ENGLISH: TÁI XUẤT GIANG HỒ là phần thứ ba của loạt phim hài Johnny English, với Rowan Atkinson trong vai một gã bỗng dưng trở thành một điệp viên bí mật. Cuộc phiêu lưu mới bắt đầu khi một vụ điều tra hệ thống an ninh mạng cho thấy danh tính của tất cả các điệp viên đang hoạt động tại Anh, và Johnny là hy vọng cuối cùng để điều tra bí mật ấy. \r\n\r\nDù được biết là một điệp viên nghỉ hưu nhưng đây là lần đầu tiên gã giang hồ này bắt tay động với sứ mệnh tìm kiếm kẻ tấn công. Là một người với kỹ năng ít ỏi và năng lực hạn chế, Johnny English có phải vượt qua được những thách thức trong thời buổi công nghệ hiện đại để hoàn thành sứ mệnh này thành công hay không? ', 0),
-(32, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 0),
+(32, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 1),
 (33, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 4),
 (34, 'Thần Điêu Đại Hiệp', 'Trung Quốc', 2003, '45', 40, 1, '../../images/than_dieu_dại_hiep.jpg', 'Thần điêu hiệp lữ là phim dựa trên tiểu thuyết cùng tên của Kim Dung, còn có tên khác là Thần Điêu đại hiệp. Thần điêu hiệp lữ là phần hai trong bộ Xạ điêu tam bộ khúc. Bối cảnh của Thần điêu hiệp lữ là vào cuối thời Nam Tống, khi quân Mông Cổ đã lớn mạnh, tiêu diệt hầu hết châu Á, châu Âu, đang trực tiếp uy hiếp an nguy của Nam Tống.\r\n\r\nCâu chuyện xoay quanh tình yêu của hai nhân vật chính là Dương Quá và Tiểu Long Nữ giữa những cuộc chiến tang thương đẫm máu cả trên giang hồ lẫn chiến trường.\r\n', 1),
-(35, 'Điệp viên không không thấy 2', 'Anh', 2014, '160', 1, 1, '../../images/DSC100336737.jpg', 'Đặc vụ xuất sắc bậc nhất của MI7, Johnny English, đã lui về sống ẩn dật trong một ngôi chùa Tây Tạng do Ting Wang trụ trì; sau vụ lộn xộn đáng xấu hổ ở Mozambique 8 năm về trước. Nhưng khi nhận được cuộc gọi từ cục tình báo, đề nghị nắm giữ một sứ mệnh mà chỉ mình anh làm được, English đã sẵn sàng để quay trở lại.', 0);
+(35, 'Điệp viên không không thấy 2', 'Anh', 2014, '160', 1, 1, '../../images/DSC100336737.jpg', 'Đặc vụ xuất sắc bậc nhất của MI7, Johnny English, đã lui về sống ẩn dật trong một ngôi chùa Tây Tạng do Ting Wang trụ trì; sau vụ lộn xộn đáng xấu hổ ở Mozambique 8 năm về trước. Nhưng khi nhận được cuộc gọi từ cục tình báo, đề nghị nắm giữ một sứ mệnh mà chỉ mình anh làm được, English đã sẵn sàng để quay trở lại.', 51);
 
 -- --------------------------------------------------------
 
@@ -151,6 +181,14 @@ INSERT INTO `users` (`ID`, `userName`, `userEmail`, `userPassword`, `userLevel`,
 --
 
 --
+-- Chỉ mục cho bảng `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`cmttID`),
+  ADD KEY `fk_comment_users` (`ID`),
+  ADD KEY `fk_comment_movie` (`movieID`);
+
+--
 -- Chỉ mục cho bảng `link`
 --
 ALTER TABLE `link`
@@ -181,6 +219,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `cmttID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT cho bảng `link`
 --
 ALTER TABLE `link`
@@ -207,6 +251,13 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `fk_comment_movie` FOREIGN KEY (`movieID`) REFERENCES `movie` (`movieID`),
+  ADD CONSTRAINT `fk_comment_users` FOREIGN KEY (`ID`) REFERENCES `users` (`ID`);
 
 --
 -- Các ràng buộc cho bảng `link`

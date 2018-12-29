@@ -47,7 +47,6 @@ $(document).ready(function () {
                 success: function (data) {
                     $('.main-left').html(data);
                     // $('.row').html(data);
-                    
                 }
             });
         }
