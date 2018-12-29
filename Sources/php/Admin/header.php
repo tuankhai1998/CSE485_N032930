@@ -23,6 +23,13 @@
                 return false;
             }
         }
+        function show_confirm_delcmt() {
+            if (confirm("Bạn có muốn bình luận này ?")) {
+                return true;
+            }else{
+                return false;
+            }
+        }
     </script>
 </head>
 
