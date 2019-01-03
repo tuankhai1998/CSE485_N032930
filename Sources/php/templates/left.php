@@ -4,7 +4,7 @@
         <div class="new-film">
             <?php
                  require "../library/config.php";
-                 $Xuatphimmoi = "SELECT movie.*,link.* FROM `movie`,`link` where movie.movieID=link.movieID ORDER BY link.linkDayUp DESC limit 0,6  ";
+                 $Xuatphimmoi = "SELECT movie.*,link.* FROM `movie`,`link` where movie.movieID=link.movieID ORDER BY link.linkDayUp and link.number=1  DESC limit 0,6  ";
                  $KETQUAPHIMMOI = mysqli_query($conn,$Xuatphimmoi);
                  if (mysqli_num_rows($KETQUAPHIMMOI)>0){
                      while($rows= mysqli_fetch_assoc($KETQUAPHIMMOI)){
