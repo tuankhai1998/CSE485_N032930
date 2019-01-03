@@ -75,7 +75,7 @@
                 <div class="nav-wrapper">
                     <ul>
                         <li><a href="home.php">Trang chủ</a></li>                     
-                        <li><a href="">Phim mới</a></li>
+                        <li><a href="phimmoi.php">Phim mới</a></li>
                         <li><a href="phimle.php?groubID=1">Phim lẻ</a></li>
                         <li><a href="phimle.php?groubID=2">Phim bộ</a></li>
                         <li><a href="">Khác...</a></li>

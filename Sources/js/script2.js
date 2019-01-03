@@ -51,9 +51,7 @@ $(document).ready(function () {
     $(".comment .comment_form .submit").click(function (e) { 
         e.preventDefault();        
         var m = $(".comment_form .txtcomment").val();    
-        var id_film= GetURLParameter('id');   
-        alert(m);
-        alert(id_film);
+        var id_film= GetURLParameter('id');        
         $.ajax({
             type: "POST",
             url: "../control/comment/xuly_cm.php",

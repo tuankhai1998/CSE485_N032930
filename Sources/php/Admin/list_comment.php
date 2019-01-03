@@ -1,9 +1,8 @@
 <?php 
     session_start();
     if(isset($_SESSION['username'])){
-        if($_SESSION['level']!=0){         
-      
-
+        if($_SESSION['level']!=0){     
+ 
 ?>
 <?php
     require("header.php");
@@ -24,7 +23,7 @@
                 //Kết nối csdl
                 require("../library/config.php");   
                 //Thực hiện câu truy vấn
-                $sql = "SELECT comment.cmtID, movie.movieName, users.userName, comment.cmtContent FROM comment, users, movie WHERE comment.movieID = movie.movieID AND comment.ID = users.ID";
+                $sql = "SELECT comment.cmttID, movie.movieName, users.userName, comment.cmtContent FROM comment, users, movie WHERE comment.movieID = movie.movieID AND comment.ID = users.ID  ORDER BY comment.cmtDate DESC ";
                 $result = mysqli_query($conn, $sql);
                 while ($data = mysqli_fetch_assoc($result)){
                     echo"<tr>";
@@ -32,7 +31,7 @@
                         echo"<td>$data[userName]</td>";
                         echo"<td>$data[movieName]</td>";
                         echo"<td>$data[cmtContent]</td>";  
-                        echo"<td><a href='del_comment.php?id=$data[cmtID]' onclick = 'return show_confirm_delcmt();' style='color: red;'>Xóa </a></td>";
+                        echo"<td><a href='del_comment.php?id=$data[cmttID]' onclick = 'return show_confirm_delcmt();' style='color: red;'>Xóa </a></td>";
                     echo"</tr>";
                     $STT++;
                 }

@@ -24,9 +24,6 @@
                 <th style="width: 50px;">Thêm tập</th>
                 <th style="width: 50px;">Xóa</th>
             </tr>
-            <tr>
-                <td colspan="10" style="height: 35px;"><a href="add_movie.php" style="color: greenyellow;">Thêm phim mới</a></td>
-            </tr>
             <?php
                 $STT = 1;
                 //Kết nối csdl
@@ -54,6 +51,9 @@
                 mysqli_close($conn);
                 
             ?>
+            <tr>
+                <td colspan="10"><a href="add_movie.php" style="color: greenyellow;">Thêm phim mới</a></td>
+            </tr>
         </table>
     </div>
 <?php

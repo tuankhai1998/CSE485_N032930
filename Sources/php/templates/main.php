@@ -8,8 +8,8 @@
                 $truyvanlink="SELECT `Link` FROM `link` WHERE `number`=$tap and movieID = $id ";
                 $src=mysqli_query($conn,$truyvanlink);
                 $rows=mysqli_fetch_assoc($src);
-                echo'<video  width="100%" height="auto" src="'.$rows['Link'].'" controls autoplay></video>';
-                count_view($id);
+                echo'<video  width="100%" height="auto" src="'.$rows['Link'].'" controls autoplay></video>';          
+                count_view($id);      
             ?>       
             
             <div class="conten">
@@ -60,6 +60,7 @@
                         echo"không có bản ghi nào.";
                     }          
                     mysqli_close($conn);  
+              
                 ?>
                 
                
