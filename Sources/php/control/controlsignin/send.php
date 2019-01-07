@@ -36,7 +36,8 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Active accout PhimOnline.com';
-    $mail->Body    = 'Hello'.$name.'.<br>Bạn đã là thành viên của website Phimonline. Chúng tôi rất vui mừng khi bạn tham gia cùng với chúng tôi.<br>Bạn vui lòng click vào link để kích hoạt tài khoản:<br>http://localhost/project/php/control/controlsignin/active.php?username='.$name.'&activecode='.$activeCode.'';
+    $mail->Body    = 'Hello'.$name.'.<br>Bạn đã là thành viên của website Phimonline. Chúng tôi rất vui mừng khi bạn tham gia cùng với chúng tôi.<br>Bạn vui lòng click vào link để kích hoạt tài khoản:
+    <br>http://localhost/CSE485_N032930/Sources/php/control/controlsignin/active.php?username='.$name.'&activecode='.$activeCode.'';
     $mail->AltBody = ''; 
     $mail->send();
     // echo 'Message has been sent';

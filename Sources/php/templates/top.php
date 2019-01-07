@@ -11,15 +11,17 @@
     <script src="../../jquery.validate.js"></script> -->
 </head>
 <title>Phim online.com</title>
-</head>
-
+<head>
 <body id="main">
     <div class="header-1 col-12">
-        <div class="top">        
-            <?php
-                echo'<a href="../admin/index.php" id="btnadmin"><i class="fas fa-users">&ensp;</i>Hello,'.$_SESSION['username'].'!</a>';
+        <div class="top">  
+            <?php                
+                if(isset($_SESSION['username'])){
+                    echo'<a href="../Admin/index.php" id="btnadmin"><i class="fas fa-users">&ensp;</i>Hello,'.$_SESSION['username'].'!</a>';
+                }          
             ?>  <!--tạo khoản trắng bằng &ensp; -->           
             <!-- <a href="#">Liên hệ quản cáo</a> -->
+            <a href="index.php">Đăng Nhập</a>
             <a href="../control/controlsignin/logout.php">Đăng xuất</a>
             <!-- <form id="form-signup" class="form" >
                 <a href="#" class="closse"><i class="fas fa-users"></i></a>

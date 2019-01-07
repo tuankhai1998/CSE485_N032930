@@ -16,44 +16,15 @@
 <body id="main">
     <div class="header-1 col-12">
         <div class="top">
-            <a href="../admin/index.php" id="btnadmin"><i class="fas fa-users"></i>&ensp;Hello,<?=$_SESSION['username']?>!</a><!--tạo khoản trắng bằng &ensp; -->
-            <!-- <a href="#">Liên hệ quản cáo</a>                 -->
+            <?php
+                if(isset($_SESSION['username'])){
+                    echo'<a href="../Admin/index.php" id="btnadmin"><i class="fas fa-users">&ensp;</i>Hello,'.$_SESSION['username'].'!</a>';
+                }      
+            ?>
+            <!-- <a href="#">Liên hệ quản cáo</a>     -->
+            <a href="index.php">Đăng Nhập</a>
             <a href="../control/controlsignin/logout.php">Đăng xuất</a>
-            <!-- <form id="form-signup" class="form" >
-                <a href="#" class="closse"><i class="fas fa-users"></i></a>
-                <div id="signupName" class="group">
-                    <i class="fas fa-user icon_signup"></i>
-                    <input class="fomat" type="text" id="username" name="username" placeholder="User name">
-                </div>
-                <div id="signupEmail" class="group">
-                    <i class="fas fa-envelope icon_signup"></i>
-                    <input class="fomat" type="text" id="email" name="email"  placeholder="Email">
-                </div>
-                <div id="signPassword" class="group">
-                    <i class="fas fa-lock icon_signup"></i>
-                    <input class="fomat" type="password" id="password" name="password"  placeholder="Password">
-                </div>
-                <div id="signConfirmPassword" class="group">
-                    <i class="fas fa-lock icon_signup"></i>
-                    <input class="fomat" type="password" id="confirm_password" name="confirm_password"  placeholder="Confirm password">
-                </div>                
-                <input id="subsignup" value="Sign up" type="button" name="submitacc">                
-            </form>
-            <form id="form-login" class="form">
-                <a href="#" class="closse"><i class="fas fa-users"></i></a>
-                <div id="loginName" class="group">
-                    <i class="fas fa-user icon_login"></i>
-                    <input class="fomat" type="text" id="name" placeholder="User name">
-                </div>
-                <div id="loginPassword" class="group">
-                    <i class="fas fa-lock icon_login"></i>
-                    <input class="fomat" type="password" id="password" placeholder="Password">
-                </div>
-                <div id="sublogin">
-                        <input id="login" class="sublogin" value="Log in" type="button" name="submit">
-                        <input  id="Signup" class="sublogin" value="Sign up" type="button">
-                </div>               
-            </form> -->
+           
         </div>
         <div class=" search-box">
             <input type="text" placeholder="Tìm kiếm" class="search-txt" id="txtsearch">
